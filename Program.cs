@@ -7,6 +7,7 @@ namespace rpsls
         static void Main(string[] args)
         {
             // Game description and instructions
+            Console.Clear();
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
             Console.WriteLine("Make your selection.");
             Console.WriteLine("The computer will then make a choice randomly and the game will be decided.");
