@@ -15,8 +15,9 @@ namespace rpsls
 
             // Input choice
             Random mathRandomTool = new Random();
-            string choice = Console.ReadLine();
             int playerChoice;
+            string choice = Console.ReadLine();
+            bool playing = true;
             bool valid = false;
             while (!valid)
             {
@@ -29,157 +30,130 @@ namespace rpsls
                     Console.WriteLine("Please provide a valid number.");
                     choice = Console.ReadLine();
                 }
-                if (playerChoice >= 1 && playerChoice <= 5)
+                while (playing)
                 {
-                    if (playerChoice == 1)
+                    if (playerChoice >= 1 && playerChoice <= 5)
                     {
-                        Console.WriteLine("You have chosen rock.");
-                    }
+                        if (playerChoice == 1)
+                        {
+                            Console.WriteLine("You have chosen rock.");
+                        }
                         if (playerChoice == 2)
-                    {
-                        Console.WriteLine("You have chosen paper.");
-                    }
+                        {
+                            Console.WriteLine("You have chosen paper.");
+                        }
                         if (playerChoice == 3)
-                    {
-                        Console.WriteLine("You have chosen scissors.");
-                    }
+                        {
+                            Console.WriteLine("You have chosen scissors.");
+                        }
                         if (playerChoice == 4)
-                    {
-                        Console.WriteLine("You have chosen lizard.");
-                    }
+                        {
+                            Console.WriteLine("You have chosen lizard.");
+                        }
                         if (playerChoice == 5)
-                    {
-                        Console.WriteLine("You have chosen spock.");
+                        {
+                            Console.WriteLine("You have chosen spock.");
+                        }
                     }
+                    else
+                    {
+                        Console.WriteLine("Please provide a number between 1 to 5.");
+                        valid = false;
+                        choice = Console.ReadLine();
+                    }
+
+                }
+
+                int computerChoice = mathRandomTool.Next(1, 5);
+                Console.WriteLine("The computer has chosen " + computerChoice + ".");
+
+                if (playerChoice == 1 && computerChoice == 3)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 1 && computerChoice == 2)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 1 && computerChoice == 4)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 1 && computerChoice == 5)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 2 && computerChoice == 1)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 2 && computerChoice == 3)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 2 && computerChoice == 4)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 2 && computerChoice == 5)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 3 && computerChoice == 2)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 3 && computerChoice == 1)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 3 && computerChoice == 4)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 3 && computerChoice == 5)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 4 && computerChoice == 2)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 4 && computerChoice == 1)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 4 && computerChoice == 3)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 4 && computerChoice == 5)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 5 && computerChoice == 2)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 5 && computerChoice == 1)
+                {
+                    Console.WriteLine("You win!");
+                }
+                else if (playerChoice == 5 && computerChoice == 4)
+                {
+                    Console.WriteLine("You lose.");
+                }
+                else if (playerChoice == 5 && computerChoice == 3)
+                {
+                    Console.WriteLine("You win!");
                 }
                 else
                 {
-                    Console.WriteLine("Please provide a number between 1 to 5.");
-                    valid = false;
-                    choice = Console.ReadLine();
+                    Console.WriteLine("It's a draw.");
                 }
+                playing = false;
+
             }
-
-            int computerChoice = mathRandomTool.Next(1, 5);
-            Console.WriteLine("The computer has chosen " + computerChoice + ".");
-            Console.WriteLine("This is the outcome of the game.");
-
-
-            // if (playerChoice == 1)
-            // {
-            //     decided = true;
-            //     Console.WriteLine("You have chosen rock.");
-            // }
-
-
-            // Console.WriteLine("The computer has chosen " + comNumber + ".");
-
-            // if (playerChoice == computerChoice)
-            // {
-            //     drawCount++;
-            //     return "IT'S A DRAW.";
-            // }
-            // else if (playerChoice == "ROCK" && computerChoice == "SCISSORS")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "ROCK" && computerChoice == "PAPER")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "ROCK" && computerChoice == "LIZARD")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "ROCK" && computerChoice == "SPOCK")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "PAPER" && computerChoice == "ROCK")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "PAPER" && computerChoice == "SCISSORS")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "PAPER" && computerChoice == "LIZARD")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "PAPER" && computerChoice == "SPOCK")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "SCISSORS" && computerChoice == "PAPER")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "SCISSORS" && computerChoice == "ROCK")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "SCISSORS" && computerChoice == "LIZARD")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "SCISSORS" && computerChoice == "SPOCK")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "LIZARD" && computerChoice == "PAPER")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "LIZARD" && computerChoice == "ROCK")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "LIZARD" && computerChoice == "SCISSORS")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "LIZARD" && computerChoice == "SPOCK")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "SPOCK" && computerChoice == "PAPER")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "SPOCK" && computerChoice == "ROCK")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-            // else if (playerChoice == "SPOCK" && computerChoice == "LIZARD")
-            // {
-            //     lossCount++;
-            //     return "YOU LOSE...";
-            // }
-            // else if (playerChoice == "SPOCK" && computerChoice == "SCISSORS")
-            // {
-            //     winCount++;
-            //     return "YOU WIN!";
-            // }
-
         }
     }
 }
