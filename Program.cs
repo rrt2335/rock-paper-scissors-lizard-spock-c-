@@ -176,8 +176,17 @@ namespace rpsls
                     Console.WriteLine("The computer has also chosen the same!");
                     Console.WriteLine("It's a draw.");
                 }
-                
-                playing = false;
+
+                // System.Console.WriteLine("Play again? (Yes or no)");
+                // string restart = Console.ReadLine();
+                // if (restart.ToLower() == "no" || restart.ToLower() == "n")
+                // {
+                //     playing = false;
+                // }
+                // else if (restart.ToLower() == "yes" || restart.ToLower() == "y")
+                // {
+                //     playing = true;
+                // }
             }
         }
     }
