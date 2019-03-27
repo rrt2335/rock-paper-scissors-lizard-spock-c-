@@ -8,8 +8,8 @@ namespace rpsls
         {
             // Game description and instructions
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
-            Console.WriteLine("Type in either 'rock', 'paper', 'scissors', 'lizard' or 'spock' as your choice.");
-            Console.WriteLine("The computer will make a choice randomly and the game will be decided.");
+            Console.WriteLine("Make your selection.");
+            Console.WriteLine("The computer will then make a choice randomly and the game will be decided.");
             Console.WriteLine("Which will you choose?");
             Console.WriteLine("(1)Rock (2)Paper (3)Scissors (4)Lizard (5)Spock (Please select a number.)");
 
@@ -37,22 +37,27 @@ namespace rpsls
                         if (playerChoice == 1)
                         {
                             Console.WriteLine("You have chosen rock.");
+                            break;
                         }
                         if (playerChoice == 2)
                         {
                             Console.WriteLine("You have chosen paper.");
+                            break;
                         }
                         if (playerChoice == 3)
                         {
                             Console.WriteLine("You have chosen scissors.");
+                            break;
                         }
                         if (playerChoice == 4)
                         {
                             Console.WriteLine("You have chosen lizard.");
+                            break;
                         }
                         if (playerChoice == 5)
                         {
                             Console.WriteLine("You have chosen spock.");
+                            break;
                         }
                     }
                     else
@@ -61,98 +66,118 @@ namespace rpsls
                         valid = false;
                         choice = Console.ReadLine();
                     }
-
                 }
 
                 int computerChoice = mathRandomTool.Next(1, 5);
-                Console.WriteLine("The computer has chosen " + computerChoice + ".");
 
+                // Game results
                 if (playerChoice == 1 && computerChoice == 3)
                 {
+                    Console.WriteLine("The computer has chosen scissors.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 1 && computerChoice == 2)
                 {
+                    Console.WriteLine("The computer has chosen paper.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 1 && computerChoice == 4)
                 {
+                    Console.WriteLine("The computer has chosen lizard.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 1 && computerChoice == 5)
                 {
+                    Console.WriteLine("The computer has chosen spock.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 2 && computerChoice == 1)
                 {
+                    Console.WriteLine("The computer has chosen rock.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 2 && computerChoice == 3)
                 {
+                    Console.WriteLine("The computer has chosen scissors.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 2 && computerChoice == 4)
                 {
+                    Console.WriteLine("The computer has chosen lizard.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 2 && computerChoice == 5)
                 {
+                    Console.WriteLine("The computer has chosen spock.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 3 && computerChoice == 2)
                 {
+                    Console.WriteLine("The computer has chosen paper.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 3 && computerChoice == 1)
                 {
+                    Console.WriteLine("The computer has chosen rock.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 3 && computerChoice == 4)
                 {
+                    Console.WriteLine("The computer has chosen lizard.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 3 && computerChoice == 5)
                 {
+                    Console.WriteLine("The computer has chosen spock.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 4 && computerChoice == 2)
                 {
+                    Console.WriteLine("The computer has chosen paper.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 4 && computerChoice == 1)
                 {
+                    Console.WriteLine("The computer has chosen rock.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 4 && computerChoice == 3)
                 {
+                    Console.WriteLine("The computer has chosen scissors.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 4 && computerChoice == 5)
                 {
+                    Console.WriteLine("The computer has chosen spock.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 5 && computerChoice == 2)
                 {
+                    Console.WriteLine("The computer has chosen paper.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 5 && computerChoice == 1)
                 {
+                    Console.WriteLine("The computer has chosen rock.");
                     Console.WriteLine("You win!");
                 }
                 else if (playerChoice == 5 && computerChoice == 4)
                 {
+                    Console.WriteLine("The computer has chosen lizard.");
                     Console.WriteLine("You lose.");
                 }
                 else if (playerChoice == 5 && computerChoice == 3)
                 {
+                    Console.WriteLine("The computer has chosen scissors.");
                     Console.WriteLine("You win!");
                 }
                 else
                 {
+                    Console.WriteLine("The computer has also chosen the same!");
                     Console.WriteLine("It's a draw.");
                 }
+                
                 playing = false;
-
             }
         }
     }
